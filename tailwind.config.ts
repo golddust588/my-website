@@ -9,9 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "main-background": "#1A1A29",
+        "dark-background": "#181824",
+        "light-purple": "#7562E0",
       },
+    },
+    screens: {
+      mobile: "360px", // Adjusted for smaller devices
+      sm: "600px",
+      md: "769px",
+      lg: "1020px",
+      xl: "1200px",
+      "2xl": "1400px",
+      "3xl": "1600px",
     },
   },
   plugins: [],
