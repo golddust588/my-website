@@ -3,13 +3,14 @@ import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import Image from "next/image";
 import AboutMe from "@/components/AboutMe";
+import Link from "next/link";
 
 export default function Home() {
   const onClick = () => {
     alert("click");
   };
   return (
-    <div className="flex flex-col min-h-screen">
+    <div id="Home" className="flex flex-col min-h-screen">
       <Header />
       <div className="flex-grow flex flex-col mt-28">
         <div className="flex justify-center gap-20 mx-20">
@@ -66,8 +67,8 @@ export default function Home() {
             <div className="w-80 h-80 bg-light-purple rounded-full relative top-12"></div>
           </div>
         </div>
-        <div className="h-20 w-full bg-dark-background z-20"></div>
-        <div className="flex flex-col gap-6 mx-20">
+        <div id="AboutMe" className="h-20 w-full bg-dark-background z-20"></div>
+        <div className="flex flex-col gap-6 mx-20 mt-10">
           <AboutMe />
           <h2 className="text-light-purple text-center">My skills:</h2>
           <div className="flex gap-4 font-semibold">
@@ -156,6 +157,7 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div id="Projects" className="mb-10"></div>
           <div>
             <h1 className="text-light-purple">Featured projects:</h1>
             <p className="mt-2 leading-loose">
@@ -223,25 +225,40 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center mt-10">
+          <div id="Contact" className="mb-10"></div>
+          <div className="flex flex-col items-center">
             <h2 className="text-light-purple">Connect with me:</h2>
             <p className="mt-2 leading-loose">
               Satisfied with me? Please do not hesitate to contact me about a
               web project you have in mind.
             </p>
             <div className="flex gap-4 mt-2">
-              <Image
-                src={"/linkedIn.svg"}
-                width={50}
-                height={50}
-                alt="linkedIn-img"
-              />
-              <Image
-                src={"/email.svg"}
-                width={80}
-                height={80}
-                alt="email-img"
-              />
+              <Link
+                href="https://www.linkedin.com/in/algimantas-skara-3a55a391/"
+                legacyBehavior
+              >
+                <a target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/linkedIn.svg"
+                    width={50}
+                    height={50}
+                    alt="linkedIn-img"
+                  />
+                </a>
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/algimantas-skara-3a55a391/"
+                legacyBehavior
+              >
+                <a target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={"/email.svg"}
+                    width={80}
+                    height={80}
+                    alt="email-img"
+                  />
+                </a>
+              </Link>
               <Image
                 src={"/instagram.svg"}
                 width={56}

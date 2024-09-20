@@ -1,16 +1,22 @@
 import Link from "next/link";
 import React, { useState } from "react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
 const Header = () => {
   const [isShowMobileNav, setIsShowMobileNav] = useState(false);
+  const [activeSection, setActiveSection] = useState("#Home");
+  // const router = useRouter();
+
+  const handleLinkClick = (section: string) => {
+    setActiveSection(section);
+  };
 
   const handleToggle = () => {
     setIsShowMobileNav((prev) => !prev);
   };
-  const router = useRouter();
+
   const isActive = (path: string) =>
-    router.pathname === path ? "text-light-purple" : "text-white";
+    activeSection === path ? "text-light-purple" : "text-white";
 
   return (
     <div className="fixed top-0 left-0 right-0 bg-dark-background h-20 flex justify-between items-center px-8 md:px-12 lg:px-24 z-30">
@@ -24,22 +30,38 @@ const Header = () => {
       <nav className="hidden md:flex items-center justify-center font-semibold">
         <ul className="flex justify-between items-center gap-8 text-white ">
           <li>
-            <Link href="/" className={isActive("/")}>
+            <Link
+              href="#Home"
+              onClick={() => handleLinkClick("#Home")}
+              className={isActive("#Home")}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link href="/cleaning" className={isActive("/cleaning")}>
+            <Link
+              href="#AboutMe"
+              onClick={() => handleLinkClick("#AboutMe")}
+              className={isActive("#AboutMe")}
+            >
               About me
             </Link>
           </li>
           <li>
-            <Link href="/track-order" className={isActive("/track-order")}>
+            <Link
+              href="#Projects"
+              onClick={() => handleLinkClick("#Projects")}
+              className={isActive("#Projects")}
+            >
               Projects
             </Link>
           </li>
           <li>
-            <Link href="/FAQs" className={isActive("/FAQs")}>
+            <Link
+              href="#Contact"
+              onClick={() => handleLinkClick("#Contact")}
+              className={isActive("#Contact")}
+            >
               Contact
             </Link>
           </li>
@@ -80,22 +102,30 @@ const Header = () => {
         >
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/" onClick={() => handleToggle()}>
+                Home
+              </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="/cleaning">About me</Link>
+              <Link href="#AboutMe" onClick={() => handleToggle()}>
+                About me
+              </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="/track-order">Projects</Link>
+              <Link href="#Projects" onClick={() => handleToggle()}>
+                Projects
+              </Link>
             </li>
           </ul>
           <ul>
             <li>
-              <Link href="/FAQs">Contact</Link>
+              <Link href="#Contact" onClick={() => handleToggle()}>
+                Contact
+              </Link>
             </li>
           </ul>
         </nav>
