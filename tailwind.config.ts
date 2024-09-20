@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         "main-background": "#1A1A29",
         "dark-background": "#181824",
+        "grey-background": "#31313F",
         "light-purple": "#7562E0",
       },
     },

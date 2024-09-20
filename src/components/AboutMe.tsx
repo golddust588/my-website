@@ -1,7 +1,7 @@
 const AboutMe = () => {
   return (
     <div>
-      <h2 className="text-3xl font-semibold text-light-purple">About me:</h2>
+      <h1 className="text-light-purple">About me:</h1>
       <p className="mt-2 leading-loose">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
         molestiae ducimus, possimus impedit dolorum voluptas dicta earum. Nihil,
