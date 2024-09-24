@@ -3,12 +3,14 @@ import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import Image from "next/image";
 import AboutMe from "@/components/AboutMe";
+import Projects from "@/components/Projects";
+import ConnectMe from "@/components/ConnectMe";
 import Link from "next/link";
 
 export default function Home() {
-  const onClick = () => {
-    alert("click");
-  };
+  // const onClick = () => {
+  //   alert("click");
+  // };
   return (
     <div id="Home" className="flex flex-col min-h-screen">
       <Header />
@@ -23,36 +25,37 @@ export default function Home() {
               accusantium
             </p>
             <div className="flex gap-4">
-              <Button
-                text={
-                  <>
-                    <span className="mr-2">About me</span>
-                    <Image
-                      src={"./aboutMe.svg"}
-                      width={24}
-                      height={24}
-                      alt="aboutMeIcon"
-                    />
-                  </>
-                }
-                onClick={onClick}
-              />
-
-              <Button
-                text={
-                  <>
-                    <span className="mr-2">Projects</span>
-                    <Image
-                      src={"./projectsEye.svg"}
-                      width={24}
-                      height={24}
-                      alt="projectsEye"
-                    />
-                  </>
-                }
-                onClick={onClick}
-                transparent
-              />
+              <Link href="#AboutMe">
+                <Button
+                  text={
+                    <>
+                      <span className="mr-2">About me</span>
+                      <Image
+                        src={"./aboutMe.svg"}
+                        width={24}
+                        height={24}
+                        alt="aboutMeIcon"
+                      />
+                    </>
+                  }
+                />
+              </Link>
+              <Link href="#Projects">
+                <Button
+                  text={
+                    <>
+                      <span className="mr-2">Projects</span>
+                      <Image
+                        src={"./projectsEye.svg"}
+                        width={24}
+                        height={24}
+                        alt="projectsEye"
+                      />
+                    </>
+                  }
+                  transparent
+                />
+              </Link>
             </div>
           </div>
           <div className="relative">
@@ -157,125 +160,14 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div id="Projects" className="mb-10"></div>
-          <div>
-            <h1 className="text-light-purple">Featured projects:</h1>
-            <p className="mt-2 leading-loose">
-              In my relatively short career as a Web Developer, I have already
-              worked on a few real-world projects, which are live.
-            </p>
-            <div className="flex justify-center gap-4 mt-4 font-semibold">
-              <div className="w-[21.4rem] flex flex-col gap-4 bg-grey-background rounded-lg p-4">
-                <div className="flex justify-center items-center h-40 bg-[#0D0617] border-[1px] border-light-purple border-opacity-50 rounded-lg">
-                  <Image
-                    src={"/flawless.svg"}
-                    width={270}
-                    height={250}
-                    alt="flawless-img"
-                  />
-                </div>
-                <h3 className="text-light-purple">FLAWLESS</h3>
-                <p>
-                  Demo Web app for private cryptocurrency trading and more,
-                  without sign-ups or limits, prioritizing user privacy and
-                  anonymity.
-                </p>
-                <div className="flex justify-between">
-                  <Button text="View live" onClick={onClick} />
-                  <Button text="Github Repo" onClick={onClick} transparent />
-                </div>
-              </div>
-              <div className="w-[21.4rem] flex flex-col gap-4 bg-grey-background rounded-lg p-4">
-                <div className="flex justify-center items-center h-40 bg-[#0D0617] border-[1px] border-light-purple border-opacity-50 rounded-lg">
-                  <Image
-                    src={"/cerberai.svg"}
-                    width={270}
-                    height={250}
-                    alt="cerberai-img"
-                  />
-                </div>
-                <h3 className="text-light-purple">CERBERAI</h3>
-                <p>
-                  Cerberai is an AI-driven demo platform providing security and
-                  risk analysis solutions to safeguard your crypto investments.
-                </p>
-                <div className="flex justify-between">
-                  <Button text="View live" onClick={onClick} />
-                  <Button text="Github Repo" onClick={onClick} transparent />
-                </div>
-              </div>
-              <div className="w-[21.4rem] flex flex-col gap-4 bg-grey-background rounded-lg p-4">
-                <div className="flex justify-center items-center h-40 bg-[#0D0617] border-[1px] border-light-purple border-opacity-50 rounded-lg">
-                  <h1 className="text-light-purple">Algimantas Skara</h1>
-                </div>
-                <h3 className="text-light-purple">ALGIMANTAS SKARA</h3>
-                <p>
-                  Check out my GitHub repo for my portfolio website and explore
-                  my complete GitHub repository for more work examples,
-                  including forum app.
-                </p>
-                <div className="flex justify-between">
-                  <Button text="Github Repo" onClick={onClick} />
-                  <Button
-                    text="Whole Repository"
-                    onClick={onClick}
-                    transparent
-                  />
-                </div>
-              </div>
-            </div>
+          <div id="Projects" className="my-10">
+            <Projects />
           </div>
-          <div id="Contact" className="mb-10"></div>
-          <div className="flex flex-col items-center">
-            <h2 className="text-light-purple">Connect with me:</h2>
-            <p className="mt-2 leading-loose">
-              Satisfied with me? Please do not hesitate to contact me about a
-              web project you have in mind.
-            </p>
-            <div className="flex gap-4 mt-2">
-              <Link
-                href="https://www.linkedin.com/in/algimantas-skara-3a55a391/"
-                legacyBehavior
-              >
-                <a target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/linkedIn.svg"
-                    width={50}
-                    height={50}
-                    alt="linkedIn-img"
-                  />
-                </a>
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/algimantas-skara-3a55a391/"
-                legacyBehavior
-              >
-                <a target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={"/email.svg"}
-                    width={80}
-                    height={80}
-                    alt="email-img"
-                  />
-                </a>
-              </Link>
-              <Image
-                src={"/instagram.svg"}
-                width={56}
-                height={56}
-                alt="instagram-img"
-              />
-              <Image
-                src={"/github.svg"}
-                width={50}
-                height={50}
-                alt="github-img"
-              />
-            </div>
+          <div id="Contact" className="my-10">
+            <ConnectMe />
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

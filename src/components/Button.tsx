@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 interface ButtonProps {
   text: string | ReactNode;
   transparent?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   textSize?: "small" | "large";
   buttonSize?: "small" | "large";
 }
