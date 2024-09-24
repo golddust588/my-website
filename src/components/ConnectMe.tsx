@@ -5,7 +5,7 @@ export const ConnectMe = () => {
   return (
     <div className="flex flex-col items-center">
       <h2 className="text-light-purple">Connect with me:</h2>
-      <p className="mt-2 leading-loose">
+      <p className="mt-2 leading-loose text-center">
         Satisfied with me? Please do not hesitate to contact me about a web
         project you have in mind.
       </p>

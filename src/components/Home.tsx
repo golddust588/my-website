@@ -1,0 +1,60 @@
+import Image from "next/image";
+import Link from "next/link";
+import Button from "./Button";
+
+const Home = () => {
+  return (
+    <div className="flex justify-center gap-20 mx-20">
+      <div className="flex flex-col justify-center gap-4">
+        <h2 className="text-3xl font-semibold">Hello, I am</h2>
+        <h1 className="text-4xl font-semibold">Algimantas</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          commodi consequuntur a iure aspernatur adipisci consectetur odio,
+          accusantium
+        </p>
+        <div className="flex gap-4">
+          <Link href="#AboutMe">
+            <Button
+              text={
+                <>
+                  <span className="mr-2">About me</span>
+                  <Image
+                    src={"./aboutMe.svg"}
+                    width={24}
+                    height={24}
+                    alt="aboutMeIcon"
+                  />
+                </>
+              }
+            />
+          </Link>
+          <Link href="#Projects">
+            <Button
+              text={
+                <>
+                  <span className="mr-2">Projects</span>
+                  <Image
+                    src={"./projectsEye.svg"}
+                    width={24}
+                    height={24}
+                    alt="projectsEye"
+                  />
+                </>
+              }
+              transparent
+            />
+          </Link>
+        </div>
+      </div>
+      <div className="relative">
+        <div className="absolute bottom-0 z-10">
+          <Image src={"/mano.png"} width={320} height={250} alt="Self-img" />
+        </div>
+        <div className="w-80 h-80 bg-light-purple rounded-full relative top-12"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;

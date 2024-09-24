@@ -1,15 +1,44 @@
 import Link from "next/link";
-import React, { useState } from "react";
-// import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 
 const Header = () => {
   const [isShowMobileNav, setIsShowMobileNav] = useState(false);
   const [activeSection, setActiveSection] = useState("#Home");
-  // const router = useRouter();
 
+  // const handleLinkClick = (section: string) => {
+  //   setActiveSection(section);
+  // };
+
+  // Handle link click for scrolling manually
   const handleLinkClick = (section: string) => {
-    setActiveSection(section);
+    document.querySelector(section)?.scrollIntoView({
+      behavior: "smooth",
+    });
+    setActiveSection(section); // Set manually on click
   };
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      { threshold: 0.7 } // Adjust threshold as needed
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   const handleToggle = () => {
     setIsShowMobileNav((prev) => !prev);
@@ -20,13 +49,11 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 bg-dark-background h-20 flex justify-between items-center px-8 md:px-12 lg:px-24 z-30">
-      <div className="h-[42px] min-w-[200px] flex justify-center items-center">
-        <Link href="/">
-          <h2 className="text-3xl font-semibold text-light-purple">
-            Algimantas Skara
-          </h2>
-        </Link>
-      </div>
+      <Link href="/">
+        <h2 className="text-3xl font-semibold text-light-purple">
+          Algimantas Skara
+        </h2>
+      </Link>
       <nav className="hidden md:flex items-center justify-center font-semibold">
         <ul className="flex justify-between items-center gap-8 text-white ">
           <li>
