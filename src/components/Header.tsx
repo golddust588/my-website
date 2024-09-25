@@ -5,20 +5,15 @@ const Header = () => {
   const [isShowMobileNav, setIsShowMobileNav] = useState(false);
   const [activeSection, setActiveSection] = useState("#Home");
 
-  // const handleLinkClick = (section: string) => {
-  //   setActiveSection(section);
-  // };
-
-  // Handle link click for scrolling manually
   const handleLinkClick = (section: string) => {
     document.querySelector(section)?.scrollIntoView({
       behavior: "smooth",
     });
-    setActiveSection(section); // Set manually on click
   };
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
+    console.log("sections", sections);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,7 +23,7 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.7 } // Adjust threshold as needed
+      { threshold: 0.8 }
     );
 
     sections.forEach((section) => {
