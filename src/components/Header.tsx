@@ -68,7 +68,7 @@ const Header = () => {
     activeSection === path ? "text-light-purple" : "text-white";
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-dark-background h-16 flex justify-between items-center px-8 md:px-12 lg:px-24 z-30">
+    <div className="fixed top-0 left-0 right-0 bg-dark-background h-16 flex justify-between items-center px-6 md:px-20 z-30">
       <Link href="/">
         <h2 className="text-3xl font-semibold text-light-purple">
           Algimantas Skara
