@@ -6,11 +6,11 @@ import { AttentionSeeker, Slide } from "react-awesome-reveal";
 const Home = () => {
   return (
     <>
-      <div className="flex justify-between gap-20">
+      <div className="flex flex-col items-center md:flex-row justify-between gap-20">
         <div className="flex flex-col justify-center gap-4">
           <h2 className="text-3xl font-semibold">Hello, I am</h2>
           <h1 className="text-4xl font-semibold">Algimantas</h1>
-          <p className="w-96">
+          <p className="">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             commodi consequuntur a iure aspernatur adipisci consectetur odio,
             accusantium

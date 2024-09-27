@@ -10,7 +10,7 @@ export const Projects = () => {
         In my relatively short career as a Web Developer, I have already worked
         on a few real-world projects, which are live.
       </p>
-      <div className="flex justify-center gap-4 mt-10 font-semibold">
+      <div className="flex flex-col items-center md:flex-row justify-center gap-4 mt-10 font-semibold">
         <div className="w-[21.4rem] flex flex-col gap-4 bg-grey-background rounded-lg p-4">
           <div className="flex justify-center items-center h-40 bg-[#0D0617] border-[1px] border-light-purple border-opacity-50 rounded-lg">
             <Image

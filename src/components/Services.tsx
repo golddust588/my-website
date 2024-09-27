@@ -9,7 +9,7 @@ export const Services = () => {
       <h2 className="text-light-purple text-center mt-6">
         The services I offer:
       </h2>
-      <div className="flex justify-center gap-4 font-semibold ">
+      <div className="flex flex-col items-center md:flex-row justify-center gap-4 font-semibold ">
         {/* Service 1 */}
         <div
           className={`flex flex-col gap-2 justify-center items-center text-center w-[21.4rem] h-80 border-2 rounded-xl cursor-pointer ${

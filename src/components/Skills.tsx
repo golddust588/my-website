@@ -6,7 +6,7 @@ export const Skills = () => {
   return (
     <>
       <h2 className="text-light-purple text-center mt-6">My skills:</h2>
-      <div className="flex gap-4 justify-center font-semibold">
+      <div className="flex flex-col md:flex-row gap-4 justify-center font-semibold">
         {/* Skill 1 */}
         <div
           className={`p-4 cursor-pointer ${

@@ -13,7 +13,7 @@ export default function Index() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <div className="flex-grow mx-auto max-w-[1220px]">
-        <div className="flex flex-col mx-20">
+        <div className="flex flex-col mx-6 md:mx-20">
           <section id="Home" className="pt-28">
             <Fade>
               <Home />
