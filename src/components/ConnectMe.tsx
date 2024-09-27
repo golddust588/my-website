@@ -1,10 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Zoom } from "react-awesome-reveal";
+import { useState, useEffect } from "react";
+import { useScreen } from "usehooks-ts";
+// import Spinner from "./Spinner";
 
 export const ConnectMe = () => {
+  const screen = useScreen();
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure this runs only after the component has mounted (on the client)
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Or you can return a fallback or skeleton while waiting
+  }
+
+  // if (!screen) {
+  //   return <Spinner />;
+  // }
+
   return (
-    <div className="flex flex-col gap-6 items-center">
+    <div
+      className={`flex flex-col gap-6 items-center ${
+        screen.height > 800 ? "py-40" : ""
+      }`}
+    >
       <h2 className="text-light-purple">Connect with me:</h2>
       <p className="mt-2 leading-loose text-center">
         Satisfied with me? Please do not hesitate to contact me about a web

@@ -19,7 +19,7 @@ export default function Index() {
               <Home />
             </Fade>
           </section>
-          <section id="AboutMe" className="pt-28 pb-16">
+          <section id="AboutMe" className="pt-20 pb-16">
             <Fade delay={150}>
               <div className="flex flex-col gap-12">
                 <AboutMe />
@@ -28,12 +28,12 @@ export default function Index() {
               </div>
             </Fade>
           </section>
-          <section id="Projects" className="pt-28 pb-16">
+          <section id="Projects" className="pt-20 pb-16">
             <Fade>
               <Projects />
             </Fade>
           </section>
-          <section id="Contact" className="py-96">
+          <section id="Contact" className="py-40">
             <Fade delay={150}>
               <ConnectMe />
             </Fade>

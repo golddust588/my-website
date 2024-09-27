@@ -13,25 +13,50 @@ const Header = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
-    console.log("sections", sections);
+    const viewportHeight = window.innerHeight; // Get the height of the screen
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${entry.target.id}`);
-          }
-        });
-      },
-      { threshold: 0.8 }
-    );
+    // Define different thresholds for each section
+    const thresholdMapSmallScreen: { [key: string]: number } = {
+      "#Home": 0.9,
+      "#AboutMe": 0.4,
+      "#Projects": 0.5,
+      "#Contact": 0.5,
+    };
+
+    const thresholdMapLargeScreen: { [key: string]: number } = {
+      "#Home": 0.8,
+      "#AboutMe": 0.7,
+      "#Projects": 0.8,
+      "#Contact": 0.9,
+    };
+
+    const thresholdMap =
+      viewportHeight > 800 ? thresholdMapLargeScreen : thresholdMapSmallScreen;
+
+    const observers: IntersectionObserver[] = [];
 
     sections.forEach((section) => {
+      const sectionId = `#${section.id}`;
+      const threshold = thresholdMap[sectionId] || 0.7; // Default threshold if not in map
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(sectionId);
+            }
+          });
+        },
+        { threshold }
+      );
+
       observer.observe(section);
+      observers.push(observer); // Keep track of observers
     });
 
     return () => {
-      sections.forEach((section) => observer.unobserve(section));
+      // Clean up all observers
+      observers.forEach((observer) => observer.disconnect());
     };
   }, []);
 
@@ -43,7 +68,7 @@ const Header = () => {
     activeSection === path ? "text-light-purple" : "text-white";
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-dark-background h-20 flex justify-between items-center px-8 md:px-12 lg:px-24 z-30">
+    <div className="fixed top-0 left-0 right-0 bg-dark-background h-16 flex justify-between items-center px-8 md:px-12 lg:px-24 z-30">
       <Link href="/">
         <h2 className="text-3xl font-semibold text-light-purple">
           Algimantas Skara
