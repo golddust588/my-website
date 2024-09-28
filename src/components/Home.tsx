@@ -9,11 +9,11 @@ const Home = () => {
       <div className="flex flex-col items-center md:flex-row justify-between gap-20">
         <div className="flex flex-col justify-center gap-4">
           <h2 className="text-3xl font-semibold">Hello, I am</h2>
-          <h1 className="text-4xl font-semibold">Algimantas</h1>
+          <h1 className="text-4xl font-semibold">Algimantas Skara</h1>
           <p className="">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
-            commodi consequuntur a iure aspernatur adipisci consectetur odio,
-            accusantium
+            Freelance Full Stack Developer. I create everything from simple
+            landing pages to complex full-stack applications, whether for your
+            new business idea or to help manage an existing one.
           </p>
           <div className="flex gap-4">
             <Link href="#Contact">

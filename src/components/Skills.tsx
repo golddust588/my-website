@@ -9,7 +9,7 @@ export const Skills = () => {
       <div className="flex flex-col md:flex-row gap-4 justify-center font-semibold">
         {/* Skill 1 */}
         <div
-          className={`p-4 cursor-pointer ${
+          className={`p-4 cursor-pointer" ${
             activeSkill === "web-dev" ? "bg-light-purple" : "bg-gray-400"
           }`}
           onClick={() => setActiveSkill("web-dev")}
@@ -57,7 +57,7 @@ export const Skills = () => {
 
         {/* Skill 3 */}
         <div
-          className={`p-4 cursor-pointer ${
+          className={`p-4 cursor-pointer md:max-w-[20rem] ${
             activeSkill === "node-backend" ? "bg-light-purple" : "bg-gray-400"
           }`}
           onClick={() => setActiveSkill("node-backend")}
@@ -69,7 +69,8 @@ export const Skills = () => {
             <li>PostgreSQL</li>
             <li>Authentication with bcrypt, JWT</li>
             <li>Custom API development</li>
-            <li>Integration with third-party APIs</li>
+            <li>Integration with third-party APIs such as OpenAi and others</li>
+            <li>PDF files generation</li>
           </ul>
         </div>
       </div>
