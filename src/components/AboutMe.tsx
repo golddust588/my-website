@@ -1,3 +1,6 @@
+import Button from "./Button";
+import Image from "next/image";
+
 const AboutMe = () => {
   return (
     <div>
@@ -16,6 +19,23 @@ const AboutMe = () => {
           robust applications while ensuring a seamless and engaging web
           experience for end users.
         </p>
+      </div>
+      <div className="flex justify-center mt-8">
+        <a href="/Algimantas Skara CV.pdf" download>
+          <Button
+            text={
+              <>
+                <span className="mr-2">Download CV</span>
+                <Image
+                  src={"./download.svg"}
+                  width={24}
+                  height={24}
+                  alt="downloadIcon"
+                />
+              </>
+            }
+          />
+        </a>
       </div>
     </div>
   );

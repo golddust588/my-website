@@ -143,7 +143,7 @@ const Header = () => {
         </button>
 
         <nav
-          className={`pt-10 flex flex-col gap-8 text-center absolute bg-[#291F3E] text-white text-3xl top-20 h-screen w-full transition-all duration-300 ${
+          className={`pt-10 flex flex-col gap-8 text-center absolute bg-[#291F3E] text-white text-3xl top-16 h-screen w-full transition-all duration-300 ${
             isShowMobileNav ? "left-0" : "left-[-100%]"
           }`}
         >
