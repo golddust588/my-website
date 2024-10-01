@@ -7,10 +7,11 @@ const AboutMe = () => {
       <h1 className="text-light-purple">About me:</h1>
       <p className="mt-2 leading-loose">
         Although I hold a master&#39;s degree in International Economics, I
-        never found much joy in it. Later, I discovered programming and
-        instantly dove deep into it. I enjoy both creating new projects and
-        maintaining existing ones, finding great satisfaction in generating
-        significant economic value through technology.
+        didn&#39;t have many opportunities to fully apply my creativity and
+        contribute to meaningful projects in that field. Later, I discovered
+        programming and instantly dove deep into it. I enjoy both creating new
+        projects and maintaining existing ones, finding great satisfaction in
+        generating significant economic value through technology.
       </p>
       <div className="flex items-center gap-4 mt-4">
         <h1 className="text-6xl font-bold text-light-purple">1.5+</h1>
