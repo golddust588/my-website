@@ -9,7 +9,7 @@ export const Skills = () => {
       <div className="flex flex-col md:flex-row gap-4 justify-center font-semibold">
         {/* Skill 1 */}
         <div
-          className={`p-4 cursor-pointer" ${
+          className={`p-4 cursor-pointer ${
             activeSkill === "web-dev" ? "bg-light-purple" : "bg-gray-400"
           }`}
           onClick={() => setActiveSkill("web-dev")}
