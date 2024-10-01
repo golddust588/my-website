@@ -14,6 +14,7 @@ const Header = () => {
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const viewportHeight = window.innerHeight; // Get the height of the screen
+    console.log("height", viewportHeight);
 
     // Define different thresholds for each section
     const thresholdMapSmallScreen: { [key: string]: number } = {
@@ -31,7 +32,7 @@ const Header = () => {
     };
 
     const thresholdMap =
-      viewportHeight > 800 ? thresholdMapLargeScreen : thresholdMapSmallScreen;
+      viewportHeight > 1000 ? thresholdMapLargeScreen : thresholdMapSmallScreen;
 
     const observers: IntersectionObserver[] = [];
 
