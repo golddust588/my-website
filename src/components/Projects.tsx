@@ -61,11 +61,7 @@ export const Projects = () => {
                 <Button text="View live" />
               </a>
             </Link>
-            <Link href="https://github.com/golddust588/ceber-BE" legacyBehavior>
-              <a target="_blank" rel="noopener noreferrer">
-                <Button text="Github Repo" transparent />
-              </a>
-            </Link>
+            <Button text="Github Repo" transparent private />
           </div>
         </div>
         <div className="w-[21.4rem] flex flex-col gap-4 bg-grey-background rounded-lg p-4">
