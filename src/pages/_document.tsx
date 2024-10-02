@@ -7,7 +7,7 @@ export default function Document() {
         <title>Full stack developer | Algimantas Skara</title>
         <meta
           name="description"
-          content="Portfolio website of a skilled full-stack developer specializing in modern web development. Available for freelance or full-time hire. Explore projects and contact for job opportunities."
+          content="Portfolio website of a skilled full-stack React/Node.js developer specializing in modern web development. Available for freelance or full-time hire. Explore projects and contact for job opportunities."
         />
         <meta name="keywords" content="full-stack, developer, react" />
       </Head>
